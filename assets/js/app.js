@@ -250,6 +250,65 @@ if(
 }
 
 
+const carritoExistente =
+JSON.parse(
+    localStorage.getItem(
+        "carrito"
+    )
+) || [];
+
+const pedidosExistentes =
+JSON.parse(
+    localStorage.getItem(
+        "pedidos"
+    )
+) || [];
+
+let eventosMismaFecha = 0;
+
+carritoExistente.forEach(
+    item => {
+
+        if(
+            item.fecha ===
+            fechaEvento
+        ){
+
+            eventosMismaFecha++;
+
+        }
+
+    }
+);
+
+pedidosExistentes.forEach(
+    pedido => {
+
+        if(
+            pedido.fecha ===
+            fechaEvento
+        ){
+
+            eventosMismaFecha++;
+
+        }
+
+    }
+);
+
+if(
+    eventosMismaFecha >= 3
+){
+
+    alert(
+        "No hay disponibilidad para la fecha seleccionada. Máximo 3 eventos por día."
+    );
+
+    return;
+
+}
+
+
 const precio =
 preciosServicios[servicio];
 
