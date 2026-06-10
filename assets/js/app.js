@@ -211,6 +211,45 @@ parseInt(
     ).value
 );
 
+const fechaEvento =
+document.getElementById(
+    "fechaEvento"
+).value;
+
+const hoy = new Date();
+
+hoy.setHours(
+    0,0,0,0
+);
+
+const fechaSeleccionada =
+new Date(
+    fechaEvento
+);
+
+const diferenciaDias =
+Math.ceil(
+    (
+        fechaSeleccionada - hoy
+    ) /
+    (
+        1000 * 60 * 60 * 24
+    )
+);
+
+if(
+    diferenciaDias < 10
+){
+
+    alert(
+        "Los eventos deben solicitarse con un mínimo de 10 días de anticipación."
+    );
+
+    return;
+
+}
+
+
 const precio =
 preciosServicios[servicio];
 
@@ -228,9 +267,7 @@ const item = {
     subtotal,
 
     fecha:
-        document.getElementById(
-            "fechaEvento"
-        ).value,
+    fechaEvento,
 
     tipoEvento:
         document.getElementById(
