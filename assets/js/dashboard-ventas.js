@@ -122,21 +122,71 @@ pedidos.forEach((pedido,index)=>{
 
                 </p>
 
-                <button
-                    class="btn btn-success btnAprobar"
-                    data-index="${index}">
+                ${
+    pedido.estado === "Confirmación Pendiente"
+    ? `
+    <button
+        class="btn btn-success btnAprobar"
+        data-index="${index}">
 
-                    Aprobar
+        Aprobar
 
-                </button>
+    </button>
 
-                <button
-                    class="btn btn-danger btnRechazar"
-                    data-index="${index}">
+    <button
+        class="btn btn-danger btnRechazar"
+        data-index="${index}">
 
-                    Rechazar
+        Rechazar
 
-                </button>
+    </button>
+    `
+    : ""
+}
+
+${
+    pedido.estado === "Cambio Solicitado"
+    ? `
+    <button
+        class="btn btn-info btnAprobarCambio"
+        data-index="${index}">
+
+        Aprobar Cambio
+
+    </button>
+
+    <button
+        class="btn btn-secondary btnRechazarCambio"
+        data-index="${index}">
+
+        Rechazar Cambio
+
+    </button>
+    `
+    : ""
+}
+
+${
+    pedido.estado === "Cancelación Solicitada"
+    ? `
+    <button
+        class="btn btn-dark btnAprobarCancelacion"
+        data-index="${index}">
+
+        Aprobar Cancelación
+
+    </button>
+
+    <button
+        class="btn btn-warning btnRechazarCancelacion"
+        data-index="${index}">
+
+        Rechazar Cancelación
+
+    </button>
+    `
+    : ""
+}
 
             </div>
 
@@ -201,6 +251,114 @@ document.addEventListener(
             location.reload();
 
         }
+
+        if(
+    e.target.classList.contains(
+        "btnAprobarCambio"
+    )
+){
+
+    const index =
+    e.target.dataset.index;
+
+    pedidos[index].estado =
+    "Cambio Aprobado";
+
+    localStorage.setItem(
+        "pedidos",
+        JSON.stringify(
+            pedidos
+        )
+    );
+
+    alert(
+        "Cambio aprobado correctamente."
+    );
+
+    location.reload();
+
+}
+
+if(
+    e.target.classList.contains(
+        "btnRechazarCambio"
+    )
+){
+
+    const index =
+    e.target.dataset.index;
+
+    pedidos[index].estado =
+    "Cambio Rechazado";
+
+    localStorage.setItem(
+        "pedidos",
+        JSON.stringify(
+            pedidos
+        )
+    );
+
+    alert(
+        "Cambio rechazado."
+    );
+
+    location.reload();
+
+}
+
+if(
+    e.target.classList.contains(
+        "btnAprobarCancelacion"
+    )
+){
+
+    const index =
+    e.target.dataset.index;
+
+    pedidos[index].estado =
+    "Cancelado";
+
+    localStorage.setItem(
+        "pedidos",
+        JSON.stringify(
+            pedidos
+        )
+    );
+
+    alert(
+        "Pedido cancelado correctamente."
+    );
+
+    location.reload();
+
+}
+
+if(
+    e.target.classList.contains(
+        "btnRechazarCancelacion"
+    )
+){
+
+    const index =
+    e.target.dataset.index;
+
+    pedidos[index].estado =
+    "Cancelación Rechazada";
+
+    localStorage.setItem(
+        "pedidos",
+        JSON.stringify(
+            pedidos
+        )
+    );
+
+    alert(
+        "Solicitud de cancelación rechazada."
+    );
+
+    location.reload();
+
+}
 
     }
 );
