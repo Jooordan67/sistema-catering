@@ -249,7 +249,6 @@ if(
 
 }
 
-
 const carritoExistente =
 JSON.parse(
     localStorage.getItem(
@@ -307,7 +306,6 @@ if(
     return;
 
 }
-
 
 const precio =
 preciosServicios[servicio];
