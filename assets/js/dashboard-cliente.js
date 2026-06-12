@@ -19,6 +19,34 @@ function formatearFecha(fechaISO){
 
 }
 
+function diasRestantes(
+    fechaEvento
+){
+
+    const hoy =
+    new Date();
+
+    hoy.setHours(
+        0,0,0,0
+    );
+
+    const fecha =
+    new Date(
+        fechaEvento
+    );
+
+    return Math.ceil(
+        (
+            fecha - hoy
+        ) /
+        (
+            1000 * 60 * 60 * 24
+        )
+    );
+
+}
+
+
 const nombreUsuario =
 document.getElementById(
     "nombreUsuario"
@@ -167,13 +195,13 @@ document
 document.addEventListener("click", function(e){
 
     if(
-        e.target.classList.contains(
-            "btnPedido"
-        )
-    ){
+    e.target.classList.contains(
+        "btnPedido"
+    )
+){
 
-        const index =
-        e.target.dataset.index;
+    const index =
+    e.target.dataset.index;
 
         const carrito =
         JSON.parse(
@@ -191,6 +219,7 @@ document.addEventListener("click", function(e){
                 "pedidos"
             )
         ) || [];
+
 
         pedidos.push({
 
@@ -254,6 +283,116 @@ document.addEventListener("click", function(e){
 
     }
 
+    if(
+    e.target.classList.contains(
+        "btnCambio"
+    )
+){
+
+    const id =
+    parseInt(
+        e.target.dataset.id
+    );
+
+    const pedidos =
+    JSON.parse(
+        localStorage.getItem(
+            "pedidos"
+        )
+    ) || [];
+
+    const pedido =
+    pedidos.find(
+        p => p.id === id
+    );
+
+    if(
+        diasRestantes(
+            pedido.fecha
+        ) < 8
+    ){
+
+        alert(
+            "No se permiten cambios con menos de 8 días de anticipación."
+        );
+
+        return;
+
+    }
+
+    pedido.estado =
+    "Cambio Solicitado";
+
+    localStorage.setItem(
+        "pedidos",
+        JSON.stringify(
+            pedidos
+        )
+    );
+
+    alert(
+        "Solicitud de cambio registrada."
+    );
+
+    location.reload();
+
+}
+
+if(
+    e.target.classList.contains(
+        "btnCancelar"
+    )
+){
+
+    const id =
+    parseInt(
+        e.target.dataset.id
+    );
+
+    const pedidos =
+    JSON.parse(
+        localStorage.getItem(
+            "pedidos"
+        )
+    ) || [];
+
+    const pedido =
+    pedidos.find(
+        p => p.id === id
+    );
+
+    if(
+        diasRestantes(
+            pedido.fecha
+        ) < 8
+    ){
+
+        alert(
+            "No se permiten cancelaciones con menos de 8 días de anticipación."
+        );
+
+        return;
+
+    }
+
+    pedido.estado =
+    "Cancelación Solicitada";
+
+    localStorage.setItem(
+        "pedidos",
+        JSON.stringify(
+            pedidos
+        )
+    );
+
+    alert(
+        "Solicitud de cancelación registrada."
+    );
+
+    location.reload();
+
+}
+
 });
 
 const pedidos =
@@ -278,6 +417,27 @@ pedidos.forEach((pedido,index)=>{
     if(pedido.estado === "Rechazado"){
         colorEstado = "danger";
     }
+
+    if(
+    pedido.estado ===
+    "Cambio Solicitado"
+){
+    colorEstado = "info";
+}
+
+if(
+    pedido.estado ===
+    "Cambio Aprobado"
+){
+    colorEstado = "primary";
+}
+
+if(
+    pedido.estado ===
+    "Cancelación Solicitada"
+){
+    colorEstado = "dark";
+}
 
     listaPedidos.innerHTML += `
 
@@ -341,6 +501,52 @@ pedidos.forEach((pedido,index)=>{
                 ${pedido.estado}
 
             </span>
+            
+
+${
+    pedido.estado === "Confirmación Pendiente" ||
+    pedido.estado === "Aprobado por Ventas"
+    ? `
+    <div class="mt-3">
+
+        <button
+            class="btn btn-warning btnCambio"
+            data-id="${pedido.id}">
+
+            Solicitar Cambio
+
+        </button>
+
+        <button
+            class="btn btn-danger btnCancelar"
+            data-id="${pedido.id}">
+
+            Solicitar Cancelación
+
+        </button>
+
+    </div>
+    `
+    : ""
+}
+
+${
+    pedido.estado === "Cambio Aprobado"
+    ? `
+    <div class="mt-3">
+
+        <button
+            class="btn btn-primary btnModificar"
+            data-id="${pedido.id}">
+
+            Modificar Pedido
+
+        </button>
+
+    </div>
+    `
+    : ""
+}
 
         </div>
 
