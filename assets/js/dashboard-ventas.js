@@ -122,6 +122,21 @@ pedidos.forEach((pedido,index)=>{
 
                 </p>
 
+${
+pedido.estadoReembolso
+?
+`
+<p>
+
+    <strong>Reembolso:</strong>
+    ${pedido.estadoReembolso}
+
+</p>
+`
+:
+""
+}
+
                 ${
     pedido.estado === "Confirmación Pendiente"
     ? `
@@ -318,6 +333,9 @@ if(
     pedidos[index].estado =
     "Cancelado";
 
+    pedidos[index].estadoReembolso =
+    "Pendiente";
+
     localStorage.setItem(
         "pedidos",
         JSON.stringify(
@@ -326,7 +344,7 @@ if(
     );
 
     alert(
-        "Pedido cancelado correctamente."
+        "Cancelación aprobada. Pendiente de reembolso por Administración."
     );
 
     location.reload();

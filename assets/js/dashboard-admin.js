@@ -85,6 +85,10 @@ pedidos.forEach(pedido => {
 
     switch(pedido.estado){
 
+        case "Cancelado":
+    color = "danger";
+    break;
+
         case "Confirmación Pendiente":
             color = "warning";
             break;
@@ -149,6 +153,41 @@ pedidos.forEach(pedido => {
             <p>
                 <strong>Total:</strong>
                 S/. ${pedido.subtotal}
+                ${
+pedido.estadoReembolso
+?
+`
+<p>
+    <strong>Reembolso:</strong>
+    ${pedido.estadoReembolso}
+</p>
+`
+:
+""
+
+}
+
+${
+pedido.estado === "Cancelado"
+&&
+pedido.estadoReembolso === "Pendiente"
+?
+`
+<div class="mt-2">
+
+    <button
+        class="btn btn-danger btnReembolso"
+        data-id="${pedido.id}">
+
+        Realizar Reembolso
+
+    </button>
+
+</div>
+`
+:
+""
+}
             </p>
 
         </div>
@@ -173,6 +212,58 @@ document.getElementById(
 ).textContent =
     entregados;
 
+document.addEventListener(
+    "click",
+    function(e){
+
+        if(
+            e.target.classList.contains(
+                "btnReembolso"
+            )
+        ){
+
+            const id =
+            parseInt(
+                e.target.dataset.id
+            );
+
+            const pedidos =
+            JSON.parse(
+                localStorage.getItem(
+                    "pedidos"
+                )
+            ) || [];
+
+            const pedido =
+            pedidos.find(
+                p => p.id === id
+            );
+
+            pedido.estadoReembolso =
+            "Reembolsado";
+
+            pedido.fechaReembolso =
+            new Date().toISOString();
+
+            localStorage.setItem(
+                "pedidos",
+                JSON.stringify(
+                    pedidos
+                )
+            );
+
+            alert(
+                "Reembolso realizado correctamente."
+            );
+
+            location.reload();
+
+        }
+
+    }
+);
+
+    
     const btnCerrarSesion =
 document.getElementById(
     "btnCerrarSesion"

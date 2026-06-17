@@ -604,6 +604,34 @@ if(
 
             </span>
             
+${
+pedido.estadoReembolso
+?
+`
+<p class="mt-2">
+
+    <strong>Estado devolución:</strong>
+    ${pedido.estadoReembolso}
+
+</p>
+`
+:
+""
+}
+
+${
+pedido.estadoReembolso === "Reembolsado"
+?
+`
+<div class="alert alert-success mt-2">
+
+    ✅ Su devolución ha sido realizada correctamente.
+
+</div>
+`
+:
+""
+}
 
 ${
     pedido.estado === "Confirmación Pendiente" ||
