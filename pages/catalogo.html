@@ -1,4 +1,4 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -10,8 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Font Awesome -->
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
     <!-- CSS -->
     <link rel="stylesheet" href="../assets/css/style.css">
@@ -27,10 +26,7 @@
                 Catering Marketplace
             </a>
 
-            <button class="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#menu">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
 
                 <span class="navbar-toggler-icon"></span>
 
@@ -49,321 +45,382 @@
                     </li>
 
                     <li class="nav-item" id="menuContacto">
-                        <a class="nav-link" href="#contacto">Contáctanos</a>
-                    </li>
-
-                    <li class="nav-item" id="menuCarrito">
-                        <a
-    class="nav-link"
-    href="#"
-    data-bs-toggle="offcanvas"
-    data-bs-target="#carritoCanvas">
-
-    <i class="fa-solid fa-cart-shopping"></i>
-    Carrito
-
-    <span
-        id="contadorCarrito"
-        class="badge bg-warning text-dark">
-        0
-    </span>
-
-</a>
-                            
+                        <a class="nav-link" href="https://wa.me/51940524026" target="_blank">
+                            <i class="fa-brands fa-whatsapp"></i> Contáctanos
                         </a>
                     </li>
 
-                <li class="nav-item" id="contenedorSesion">
+                    <li class="nav-item" id="menuCarrito">
+                        <a class="nav-link" href="#" data-bs-toggle="offcanvas" data-bs-target="#carritoCanvas">
 
-    <a
-        class="btn btn-outline-light ms-2"
-        href="login.html"
-        id="btnLogin">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            Carrito
 
-        Iniciar Sesión
+                            <span id="contadorCarrito" class="badge bg-warning text-dark">
+                                0
+                            </span>
 
-    </a>
+                        </a>
 
-</li>
-                
+                        </a>
+                    </li>
+
+                    <li class="nav-item" id="contenedorSesion">
+
+                        <a class="btn btn-outline-light ms-2" href="login.html" id="btnLogin">
+
+                            Iniciar Sesión
+
+                        </a>
+
+                    </li>
+
                 </ul>
 
             </div>
 
         </div>
     </nav>
-    
-    
-    
+
+
+
     <!-- Catálogo -->
-<section id="catalogo" class="py-5">
+    <section id="catalogo" class="py-5">
 
-    <div class="container">
+        <div class="container">
 
-        <div class="text-center mb-5">
+            <div class="text-center mb-5">
 
-            <h2 class="fw-bold">
-                Nuestros Servicios
-            </h2>
+                <h2 class="fw-bold">
+                    Nuestros Servicios
+                </h2>
 
-            <p class="text-muted">
-                Elige el servicio ideal para tu evento.
-            </p>
+                <p class="text-muted">
+                    Elige el servicio ideal para tu evento.
+                </p>
+
+            </div>
+
+            <div class="row g-4">
+
+                <!-- Servicio 1 -->
+                <div class="col-md-4">
+
+                    <div class="card h-100 shadow-sm">
+
+                        <img src="https://ricocatering.com.sg/wp-content/uploads/2024/06/3-premium-food-served-on-table.jpg"
+                            class="card-img-top" alt="Buffet Premium">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">
+                                Buffet Premium
+                            </h5>
+
+                            <p class="card-text">
+                                Ideal para bodas y eventos elegantes.
+                            </p>
+
+                            <h6 class="text-success">
+                                S/. 55 por persona
+                            </h6>
+
+                            <button class="btn btn-warning w-100 btn-servicio" data-servicio="Buffet Premium">
+
+                                Agregar al carrito
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Servicio 2 -->
+                <div class="col-md-4">
+
+                    <div class="card h-100 shadow-sm">
+
+                        <img src="https://hechoencasa.pe/storage/uploads/servicios/coffee-break/coffee-break-003-pequeno.jpg"
+                            class="card-img-top" alt="Coffee Break">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">
+                                Coffee Break Empresarial
+                            </h5>
+
+                            <p class="card-text">
+                                Reuniones, capacitaciones y eventos corporativos.
+                            </p>
+
+                            <h6 class="text-success">
+                                S/. 25 por persona
+                            </h6>
+
+                            <button class="btn btn-warning w-100 btn-servicio" data-servicio="Coffee Break Empresarial">
+
+                                Agregar al carrito
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Servicio 3 -->
+                <div class="col-md-4">
+
+                    <div class="card h-100 shadow-sm">
+
+                        <img src="https://www.caserco.com/wp-content/uploads/2020/02/festa_infantil_caserco.jpeg"
+                            class="card-img-top" alt="Cumpleaños">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">
+                                Fiesta de Cumpleaños
+                            </h5>
+
+                            <p class="card-text">
+                                Menús especiales para celebraciones familiares.
+                            </p>
+
+                            <h6 class="text-success">
+                                S/. 35 por persona
+                            </h6>
+
+                            <button class="btn btn-warning w-100 btn-servicio" data-servicio="Fiesta de Cumpleaños">
+
+                                Agregar al carrito
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- Servicio 4 -->
+                <div class="col-md-4">
+
+                    <div class="card h-100 shadow-sm">
+
+                        <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed" class="card-img-top"
+                            alt="Quinceañeros">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">
+                                Catering para Quinceañeros
+                            </h5>
+
+                            <p class="card-text">
+                                Menús y atención especializada para celebraciones de quince años.
+                            </p>
+
+                            <h6 class="text-success">
+                                S/. 50 por persona
+                            </h6>
+
+                            <button class="btn btn-warning w-100 btn-servicio"
+                                data-servicio="Catering para Quinceañeros">
+
+                                Agregar al carrito
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Servicio 5 -->
+                <div class="col-md-4">
+
+                    <div class="card h-100 shadow-sm">
+
+                        <img src="https://images.unsplash.com/photo-1511578314322-379afb476865" class="card-img-top"
+                            alt="Conferencias">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">
+                                Catering para Conferencias
+                            </h5>
+
+                            <p class="card-text">
+                                Servicio integral para congresos, seminarios y eventos corporativos.
+                            </p>
+
+                            <h6 class="text-success">
+                                S/. 45 por persona
+                            </h6>
+
+                            <button class="btn btn-warning w-100 btn-servicio"
+                                data-servicio="Catering para Conferencias">
+
+                                Agregar al carrito
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Servicio 6 -->
+                <div class="col-md-4">
+
+                    <div class="card h-100 shadow-sm">
+
+                        <img src="https://images.unsplash.com/photo-1555244162-803834f70033" class="card-img-top"
+                            alt="Almuerzo Corporativo">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">
+                                Almuerzo Corporativo
+                            </h5>
+
+                            <p class="card-text">
+                                Menús ejecutivos para empresas, reuniones y capacitaciones.
+                            </p>
+
+                            <h6 class="text-success">
+                                S/. 40 por persona
+                            </h6>
+
+                            <button class="btn btn-warning w-100 btn-servicio" data-servicio="Almuerzo Corporativo">
+
+                                Agregar al carrito
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
 
         </div>
 
-        <div class="row g-4">
+    </section>
 
-            <!-- Servicio 1 -->
-            <div class="col-md-4">
 
-                <div class="card h-100 shadow-sm">
+    <!-- Modal Cotización -->
+    <div class="modal fade" id="modalCotizacion" tabindex="-1">
 
-                    <img
-                        src="https://ricocatering.com.sg/wp-content/uploads/2024/06/3-premium-food-served-on-table.jpg"
-                        class="card-img-top"
-                        alt="Buffet Premium">
+        <div class="modal-dialog modal-lg">
 
-                    <div class="card-body">
+            <div class="modal-content">
 
-                        <h5 class="card-title">
-                            Buffet Premium
-                        </h5>
+                <div class="modal-header">
 
-                        <p class="card-text">
-                            Ideal para bodas y eventos elegantes.
-                        </p>
+                    <h5 class="modal-title">
+                        Solicitar Cotización
+                    </h5>
 
-                        <h6 class="text-success">
-                            S/. 55 por persona
-                        </h6>
-
-                        <button
-    class="btn btn-warning w-100 btn-servicio"
-    data-servicio="Buffet Premium">
-
-    Agregar al carrito
-
-</button>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <!-- Servicio 2 -->
-            <div class="col-md-4">
-
-                <div class="card h-100 shadow-sm">
-
-                    <img
-                        src="https://hechoencasa.pe/storage/uploads/servicios/coffee-break/coffee-break-003-pequeno.jpg"
-                        class="card-img-top"
-                        alt="Coffee Break">
-
-                    <div class="card-body">
-
-                        <h5 class="card-title">
-                            Coffee Break Empresarial
-                        </h5>
-
-                        <p class="card-text">
-                            Reuniones, capacitaciones y eventos corporativos.
-                        </p>
-
-                        <h6 class="text-success">
-                            S/. 25 por persona
-                        </h6>
-
-                        <button
-    class="btn btn-warning w-100 btn-servicio"
-    data-servicio="Coffee Break Empresarial">
-
-    Agregar al carrito
-
-</button>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <!-- Servicio 3 -->
-            <div class="col-md-4">
-
-                <div class="card h-100 shadow-sm">
-
-                    <img
-                        src="https://www.caserco.com/wp-content/uploads/2020/02/festa_infantil_caserco.jpeg"
-                        class="card-img-top"
-                        alt="Cumpleaños">
-
-                    <div class="card-body">
-
-                        <h5 class="card-title">
-                            Fiesta de Cumpleaños
-                        </h5>
-
-                        <p class="card-text">
-                            Menús especiales para celebraciones familiares.
-                        </p>
-
-                        <h6 class="text-success">
-                            S/. 35 por persona
-                        </h6>
-
-                        <button
-    class="btn btn-warning w-100 btn-servicio"
-    data-servicio="Fiesta de Cumpleaños">
-
-    Agregar al carrito
-
-</button>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- Modal Cotización -->
-<div class="modal fade" id="modalCotizacion" tabindex="-1">
-
-    <div class="modal-dialog modal-lg">
-
-        <div class="modal-content">
-
-            <div class="modal-header">
-
-                <h5 class="modal-title">
-                    Solicitar Cotización
-                </h5>
-
-                <button
-                    type="button"
-                    class="btn-close"
-                    data-bs-dismiss="modal">
-                </button>
-
-            </div>
-
-            <div class="modal-body">
-
-                <form id="formCotizacion">
-
-                    <div class="mb-3">
-
-                        <label class="form-label">
-                            Servicio
-                        </label>
-
-                        <input
-                            type="text"
-                            class="form-control"
-                            id="servicioSeleccionado"
-                            readonly>
-
-                    </div>
-
-                    <div class="row">
-
-                        <div class="col-md-6 mb-3">
-
-                            <label class="form-label">
-                                Fecha del Evento
-                            </label>
-
-                            <input
-                                type="date"
-                                class="form-control"
-                                id="fechaEvento"
-                                required>
-
-                        </div>
-
-                        <div class="col-md-6 mb-3">
-
-                            <label class="form-label">
-                                Tipo de Evento
-                            </label>
-
-                            <select
-                                class="form-select"
-                                id="tipoEvento">
-
-                                <option>Boda</option>
-                                <option>Cumpleaños</option>
-                                <option>Corporativo</option>
-                                <option>Aniversario</option>
-
-                            </select>
-
-                        </div>
-
-                    </div>
-
-                    <div class="row">
-
-                        <div class="col-md-6 mb-3">
-
-                            <label class="form-label">
-                                Cantidad de Personas
-                            </label>
-
-                            <input
-                                type="number"
-                                class="form-control"
-                                id="cantidadPersonas"
-                                min="1">
-
-                        </div>
-
-                        <div class="col-md-6 mb-3">
-
-                            <label class="form-label">
-                                Lugar del Evento
-                            </label>
-
-                            <input
-                                type="text"
-                                class="form-control"
-                                id="lugarEvento">
-
-                        </div>
-
-                    </div>
-
-                    <div class="mb-3">
-
-                        <label class="form-label">
-                            Observaciones
-                        </label>
-
-                        <textarea
-                            class="form-control"
-                            rows="4"
-                            id="observaciones"></textarea>
-
-                    </div>
-
-                    <button
-                        type="submit"
-                        class="btn btn-success">
-
-                        Agregar al Carrito
-
+                    <button type="button" class="btn-close" data-bs-dismiss="modal">
                     </button>
 
-                </form>
+                </div>
+
+                <div class="modal-body">
+
+                    <form id="formCotizacion">
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+                                Servicio
+                            </label>
+
+                            <input type="text" class="form-control" id="servicioSeleccionado" readonly>
+
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-md-6 mb-3">
+
+                                <label class="form-label">
+                                    Fecha del Evento
+                                </label>
+
+                                <input type="date" class="form-control" id="fechaEvento" required>
+
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+
+                                <label class="form-label">
+                                    Tipo de Evento
+                                </label>
+
+                                <select class="form-select" id="tipoEvento">
+
+                                    <option>Boda</option>
+                                    <option>Cumpleaños</option>
+                                    <option>Corporativo</option>
+                                    <option>Aniversario</option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-md-6 mb-3">
+
+                                <label class="form-label">
+                                    Cantidad de Personas
+                                </label>
+
+                                <input type="number" class="form-control" id="cantidadPersonas" min="1">
+
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+
+                                <label class="form-label">
+                                    Lugar del Evento
+                                </label>
+
+                                <input type="text" class="form-control" id="lugarEvento">
+
+                            </div>
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+                                Observaciones
+                            </label>
+
+                            <textarea class="form-control" rows="4" id="observaciones"></textarea>
+
+                        </div>
+
+                        <button type="submit" class="btn btn-success">
+
+                            Agregar al Carrito
+
+                        </button>
+
+                    </form>
+
+                </div>
 
             </div>
 
@@ -371,54 +428,44 @@
 
     </div>
 
-</div>
+    <!-- Carrito -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="carritoCanvas">
 
-<!-- Carrito -->
-<div
-    class="offcanvas offcanvas-end"
-    tabindex="-1"
-    id="carritoCanvas">
+        <div class="offcanvas-header">
 
-    <div class="offcanvas-header">
+            <h5>
+                Mi Carrito
+            </h5>
 
-        <h5>
-            Mi Carrito
-        </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas">
+            </button>
 
-        <button
-            type="button"
-            class="btn-close"
-            data-bs-dismiss="offcanvas">
-        </button>
+        </div>
 
-    </div>
+        <div class="offcanvas-body">
 
-    <div class="offcanvas-body">
+            <div id="listaCarrito"></div>
 
-        <div id="listaCarrito"></div>
+            <hr>
 
-        <hr>
+            <h5 class="text-end">
+                Total:
+                <span id="totalCotizacion">
+                    S/. 0
+                </span>
+            </h5>
 
-<h5 class="text-end">
-    Total:
-    <span id="totalCotizacion">
-        S/. 0
-    </span>
-</h5>
+            <hr>
 
-        <hr>
+            <button class="btn btn-success w-100" id="btnGenerarCotizacion">
 
-        <button
-            class="btn btn-success w-100"
-            id="btnGenerarCotizacion">
+                Generar Cotización
 
-            Generar Cotización
+            </button>
 
-        </button>
+        </div>
 
     </div>
-
-</div>
 
 
 

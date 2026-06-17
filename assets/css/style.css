@@ -27,3 +27,88 @@ body{
 .card:hover{
     transform:translateY(-5px);
 }
+
+/* Sección Contacto */
+.contacto {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-top: 3px solid #ffc107;
+}
+
+.contacto h2 {
+    color: #333;
+    font-size: 2.5rem;
+}
+
+.contacto .form-label {
+    color: #333;
+    font-size: 0.95rem;
+}
+
+.formulario-contacto .form-control,
+.formulario-contacto .form-select {
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.formulario-contacto .form-control:focus,
+.formulario-contacto .form-select:focus {
+    border-color: #ffc107;
+    box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.25);
+}
+
+.formulario-contacto .form-control::placeholder {
+    color: #999;
+    font-style: italic;
+}
+
+.formulario-contacto textarea.form-control {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.formulario-contacto .btn-warning {
+    font-weight: 600;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(255, 193, 7, 0.3);
+    transition: all 0.3s ease;
+}
+
+.formulario-contacto .btn-warning:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 193, 7, 0.4);
+}
+
+.formulario-contacto .btn-outline-secondary {
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.formulario-contacto .text-danger {
+    font-size: 0.85rem;
+    display: block;
+    margin-top: 0.25rem;
+}
+
+.formulario-contacto .form-check-input:checked {
+    background-color: #ffc107;
+    border-color: #ffc107;
+}
+
+.formulario-contacto .alert {
+    border-radius: 8px;
+    border-left: 4px solid;
+}
+
+.formulario-contacto .alert-success {
+    border-left-color: #28a745;
+    background-color: #f0f9f6;
+    color: #155724;
+}
+
+.formulario-contacto .alert-danger {
+    border-left-color: #dc3545;
+    background-color: #fdf8f8;
+    color: #721c24;
+}

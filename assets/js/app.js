@@ -4,7 +4,13 @@ const preciosServicios = {
 
     "Coffee Break Empresarial": 25,
 
-    "Fiesta de Cumpleaños": 35
+    "Fiesta de Cumpleaños": 35,
+
+    "Catering para Quinceañeros": 50,
+
+    "Catering para Conferencias": 45,
+
+    "Almuerzo Corporativo": 40
 
 };
 
@@ -45,6 +51,35 @@ document.getElementById(
 // =====================
 // CONTADOR CARRITO
 // =====================
+
+
+// =====================
+// FECHA MÍNIMA EVENTO
+// =====================
+
+const inputFechaEvento =
+document.getElementById(
+    "fechaEvento"
+);
+
+if(inputFechaEvento){
+
+    const fechaMinima =
+    new Date();
+
+    fechaMinima.setHours(
+        0,0,0,0
+    );
+
+    fechaMinima.setDate(
+        fechaMinima.getDate() + 10
+    );
+
+    inputFechaEvento.min =
+    fechaMinima.toISOString()
+    .split("T")[0];
+
+}
 
 function actualizarContador() {
 
@@ -393,7 +428,7 @@ if(btnCotizacion){
                 );
 
                 window.location.href =
-                "/pages/login.html";
+                "../pages/login.html";
 
                 return;
             }
