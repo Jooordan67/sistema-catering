@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catering Marketplace</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+
+            <a class="navbar-brand fw-bold" href="#">
+                Catering Marketplace
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+            <div class="collapse navbar-collapse" id="menu">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#inicio">Inicio</a>
+                    </li>
+
+                    <li class="nav-item" id="menuCatalogo">
+                        <a class="nav-link" href="pages/catalogo.html">Catálogo</a>
+                    </li>
+
+                    <li class="nav-item" id="menuContacto">
+                        <a class="nav-link" href="https://wa.me/51940524026" target="_blank">
+                            <i class="fa-brands fa-whatsapp"></i> Contáctanos
+                        </a>
+                    </li>
+
+                    <li class="nav-item" id="menuCarrito">
+                        <a class="nav-link" href="#" data-bs-toggle="offcanvas" data-bs-target="#carritoCanvas">
+
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            Carrito
+
+                            <span id="contadorCarrito" class="badge bg-warning text-dark">
+                                0
+                            </span>
+
+                        </a>
+
+                        </a>
+                    </li>
+
+                    <li class="nav-item" id="contenedorSesion">
+
+                        <a class="btn btn-outline-light ms-2" href="pages/login.html" id="btnLogin">
+
+                            Iniciar Sesión
+
+                        </a>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section id="inicio" class="hero">
+
+        <div class="container">
+
+            <div class="row align-items-center">
+
+                <div class="col-lg-6">
+
+                    <h1 class="display-4 fw-bold">
+                        Transformamos tus eventos en experiencias inolvidables
+                    </h1>
+
+                    <p class="lead mt-4">
+                        Catering para bodas, eventos corporativos,
+                        cumpleaños y celebraciones especiales.
+                    </p>
+
+                    <a href="pages/catalogo.html" class="btn btn-warning btn-lg mt-3">
+                        Solicitar Cotización
+                    </a>
+
+                </div>
+
+                <div class="col-lg-6">
+
+                    <img src="https://ecotur.edu.pe/wp-content/uploads/2025/10/CATERING2025-1.jpg"
+                        class="img-fluid rounded shadow" alt="Catering">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Modal Cotización -->
+    <div class="modal fade" id="modalCotizacion" tabindex="-1">
+
+        <div class="modal-dialog modal-lg">
+
+            <div class="modal-content">
+
+                <div class="modal-header">
+
+                    <h5 class="modal-title">
+                        Solicitar Cotización
+                    </h5>
+
+                    <button type="button" class="btn-close" data-bs-dismiss="modal">
+                    </button>
+
+                </div>
+
+                <div class="modal-body">
+
+                    <form id="formCotizacion">
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+                                Servicio
+                            </label>
+
+                            <input type="text" class="form-control" id="servicioSeleccionado" readonly>
+
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-md-6 mb-3">
+
+                                <label class="form-label">
+                                    Fecha del Evento
+                                </label>
+
+                                <input type="date" class="form-control" id="fechaEvento" required>
+
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+
+                                <label class="form-label">
+                                    Tipo de Evento
+                                </label>
+
+                                <select class="form-select" id="tipoEvento">
+
+                                    <option>Boda</option>
+                                    <option>Cumpleaños</option>
+                                    <option>Corporativo</option>
+                                    <option>Aniversario</option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-md-6 mb-3">
+
+                                <label class="form-label">
+                                    Cantidad de Personas
+                                </label>
+
+                                <input type="number" class="form-control" id="cantidadPersonas" min="1">
+
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+
+                                <label class="form-label">
+                                    Lugar del Evento
+                                </label>
+
+                                <input type="text" class="form-control" id="lugarEvento">
+
+                            </div>
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+                                Observaciones
+                            </label>
+
+                            <textarea class="form-control" rows="4" id="observaciones"></textarea>
+
+                        </div>
+
+                        <button type="submit" class="btn btn-success">
+
+                            Agregar al Carrito
+
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Carrito -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="carritoCanvas">
+
+        <div class="offcanvas-header">
+
+            <h5>
+                Mi Carrito
+            </h5>
+
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas">
+            </button>
+
+        </div>
+
+        <div class="offcanvas-body">
+
+            <div id="listaCarrito"></div>
+
+            <hr>
+
+            <h5 class="text-end">
+                Total:
+                <span id="totalCotizacion">
+                    S/. 0
+                </span>
+            </h5>
+
+            <hr>
+
+            <button class="btn btn-success w-100" id="btnGenerarCotizacion">
+
+                Generar Cotización
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- Sección Contacto -->
+    <section id="contacto" class="contacto py-5">
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-lg-8 mx-auto">
+
+                    <h2 class="text-center fw-bold mb-2">
+                        Contáctanos
+                    </h2>
+
+                    <p class="text-center text-muted mb-5">
+                        ¿Tienes preguntas? Nos encantaría saber de ti. Envíanos un mensaje y nos pondremos en contacto
+                        lo antes posible.
+                    </p>
+
+                    <form id="formContacto" class="formulario-contacto">
+
+                        <!-- Nombre -->
+                        <div class="mb-3">
+                            <label for="nombreContacto" class="form-label fw-bold">
+                                Nombre Completo
+                            </label>
+                            <input type="text" class="form-control form-control-lg" id="nombreContacto"
+                                placeholder="Ej: Juan García Rodríguez" required>
+                            <small class="text-danger d-none" id="errorNombre"></small>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="mb-3">
+                            <label for="emailContacto" class="form-label fw-bold">
+                                Correo Electrónico
+                            </label>
+                            <input type="email" class="form-control form-control-lg" id="emailContacto"
+                                placeholder="ejemplo@correo.com" required>
+                            <small class="text-danger d-none" id="errorEmail"></small>
+                        </div>
+
+                        <!-- Teléfono -->
+                        <div class="mb-3">
+                            <label for="telefonoContacto" class="form-label fw-bold">
+                                Teléfono
+                            </label>
+                            <input type="tel" class="form-control form-control-lg" id="telefonoContacto"
+                                placeholder="+51 999 999 999" required>
+                            <small class="text-danger d-none" id="errorTelefono"></small>
+                        </div>
+
+                        <!-- Asunto -->
+                        <div class="mb-3">
+                            <label for="asuntoContacto" class="form-label fw-bold">
+                                Asunto
+                            </label>
+                            <select class="form-select form-select-lg" id="asuntoContacto" required>
+                                <option value="">-- Selecciona un asunto --</option>
+                                <option value="consulta">Consulta General</option>
+                                <option value="problema">Reportar un Problema</option>
+                                <option value="sugerencia">Sugerencia o Comentario</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                            <small class="text-danger d-none" id="errorAsunto"></small>
+                        </div>
+
+                        <!-- Mensaje -->
+                        <div class="mb-3">
+                            <label for="mensajeContacto" class="form-label fw-bold">
+                                Mensaje
+                            </label>
+                            <textarea class="form-control form-control-lg" id="mensajeContacto" rows="5"
+                                placeholder="Cuéntanos qué necesitas..." required></textarea>
+                            <small class="text-danger d-none" id="errorMensaje"></small>
+                            <small class="text-muted d-block mt-1">
+                                Mínimo 10 caracteres
+                            </small>
+                        </div>
+
+                        <!-- Términos -->
+                        <div class="mb-4 form-check">
+                            <input class="form-check-input" type="checkbox" id="terminosContacto" required>
+                            <label class="form-check-label" for="terminosContacto">
+                                Acepto que mis datos sean utilizados para contactarme
+                            </label>
+                            <small class="text-danger d-none d-block" id="errorTerminos"></small>
+                        </div>
+
+                        <!-- Botones -->
+                        <div class="d-flex gap-2">
+                            <button type="submit" class="btn btn-warning btn-lg flex-grow-1" id="btnEnviarContacto">
+                                <i class="fa-solid fa-paper-plane me-2"></i>
+                                Enviar Mensaje
+                            </button>
+                            <button type="reset" class="btn btn-outline-secondary btn-lg">
+                                Limpiar
+                            </button>
+                        </div>
+
+                        <!-- Mensaje de éxito -->
+                        <div class="alert alert-success mt-3 d-none" id="mensajeExito" role="alert">
+                            <i class="fa-solid fa-check-circle me-2"></i>
+                            <strong>¡Mensaje enviado!</strong> Nos pondremos en contacto pronto.
+                        </div>
+
+                        <!-- Mensaje de error -->
+                        <div class="alert alert-danger mt-3 d-none" id="mensajeErrorGlobal" role="alert">
+                            <i class="fa-solid fa-exclamation-circle me-2"></i>
+                            <strong>Error al enviar el mensaje.</strong> Por favor intenta de nuevo.
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/contacto.js"></script>
+
+</body>
+
+</html>
